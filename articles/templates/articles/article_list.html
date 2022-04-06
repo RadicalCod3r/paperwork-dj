@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    All Articles
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'app.css' %}">
+    <link rel="stylesheet" href="{% static 'articles/article.css' %}">
+{% endblock %}
+
+{% block content %}
+    {% for article in articles %}
+        {% include "./includes/article.html" %}
+    {% endfor %}
+{% endblock %}

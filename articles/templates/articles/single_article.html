@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Newspaper
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'app.css' %}">
+    <link rel="stylesheet" href="{% static 'articles/single_article.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="single-article">
+        <h3>{{ article.title }}</h3>
+        <address>Written By {{ article.author }} | {{ article.date }}</address>
+        <p>{{ article.content }}</p>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input type="submit" value="Send">
+        </form>
+        {% for comment in comments %}
+            <p>{{ comment.comment_text }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}

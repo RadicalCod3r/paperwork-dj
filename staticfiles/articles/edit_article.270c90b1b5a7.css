@@ -1,0 +1,12 @@
+.edit-article {
+    margin: 2rem;
+}
+
+.edit-article form input[type="submit"] {
+    margin-top: 1rem;
+    background-color: #343a40;
+    color: #fff;
+    padding: .5rem;
+    border-radius: 6px;
+    border: none;
+}

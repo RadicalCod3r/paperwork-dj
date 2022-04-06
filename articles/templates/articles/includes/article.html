@@ -1,0 +1,11 @@
+<div class="article">
+    <a href="{{ article.get_absolute_url }}" class="title">
+        <h3>{{ article.title }}</h3>
+    </a>
+    <address>Written By {{ article.author }} | {{ article.date }}</address>
+    <p>{{ article.content }}</p>
+    <div class="article-options">
+        <a href="{{ article.get_absolute_url }}edit/">Edit</a> | 
+        <a href="{{ article.get_absolute_url }}remove/">Remove</a>
+    </div>
+</div>
